@@ -1,0 +1,6 @@
+/node_modules
+/vendor
+silgan-mobile
+silgan-server
+conn_definitions.php
+pdf/

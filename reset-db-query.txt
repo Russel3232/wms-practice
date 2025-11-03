@@ -1,0 +1,91 @@
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE area;
+TRUNCATE bin_location;
+TRUNCATE bin_location_item;
+TRUNCATE bin_transfer;
+TRUNCATE brand;
+TRUNCATE category;
+TRUNCATE category_department;
+TRUNCATE client;
+TRUNCATE client_address;
+TRUNCATE bin_location;
+TRUNCATE cycle_count_details;
+TRUNCATE cycle_count_header;
+TRUNCATE issuance_details;
+TRUNCATE issuance_dispatch;
+TRUNCATE issuance_header;
+TRUNCATE issuance_staging;
+TRUNCATE issued_picklist;
+TRUNCATE item;
+TRUNCATE item_cost_history;
+TRUNCATE item_plu;
+TRUNCATE item_supplier;
+TRUNCATE origin;
+TRUNCATE physical_inventory;
+TRUNCATE picking_details;
+TRUNCATE picklist_details;
+TRUNCATE picklist_header;
+TRUNCATE picklist_picker;
+TRUNCATE picklist_purchase_order;
+TRUNCATE picklist_purchase_return;
+TRUNCATE picklist_reservation;
+TRUNCATE picklist_sales_order;
+TRUNCATE picklist_stock_withdrawal;
+TRUNCATE picklist_transfer_order;
+TRUNCATE purchase_order_details;
+TRUNCATE purchase_order_header;
+TRUNCATE putaway_details;
+TRUNCATE putaway_suggestion;
+TRUNCATE route;
+TRUNCATE sales_order_details;
+TRUNCATE sales_order_header;
+TRUNCATE shipping_group;
+TRUNCATE sku_type;
+TRUNCATE stock_adjustment_details;
+TRUNCATE stock_adjustment_header;
+TRUNCATE stock_card;
+TRUNCATE stock_card_backup;
+TRUNCATE stock_receipt_details;
+TRUNCATE stock_receipt_header;
+TRUNCATE stock_withdrawal_details;
+TRUNCATE stock_withdrawal_header;
+TRUNCATE supplier;
+TRUNCATE supplier_address;
+TRUNCATE supplier_contact;
+TRUNCATE supplier_for_client;
+TRUNCATE temp_barcode_printing;
+TRUNCATE supplier_group;
+TRUNCATE system_log;
+TRUNCATE terms;
+TRUNCATE origin;
+TRUNCATE transaction_numbers_used;
+TRUNCATE transfer_order_details;
+TRUNCATE transfer_order_header;
+TRUNCATE trucking;
+TRUNCATE trucking_vehicle;
+TRUNCATE unit_of_measure;
+delete from user where id!=1;
+delete from user_rights;
+delete from user_warehouse;
+delete from warehouse;
+update transaction_type set next_number_series=1
+
+
+
+
+
+delete physical_inventory 
+from physical_inventory
+left join bin_location on bin_location.id=physical_inventory.location_id 
+where bin_location.warehouse_id=22;
+
+delete stock_card 
+from stock_card
+left join bin_location on bin_location.id=stock_card.location_id 
+where bin_location.warehouse_id=22;
+
+
+delete temp_barcode_printing 
+from temp_barcode_printing
+left join bin_location on bin_location.id=temp_barcode_printing.location_id 
+where bin_location.warehouse_id=22;

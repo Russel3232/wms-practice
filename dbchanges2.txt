@@ -1,0 +1,17 @@
+create table temp_barcode_printing(
+    id int primary key AUTO_INCREMENT,
+    item_id int not null,
+    location_id int not null,
+    lot_number varchar(200),
+    mfg_date date,
+    expiry_date date,
+    quantity double,
+    uom_id int not null,
+    net_weight double,
+    box_number varchar(200),
+    created_date datetime default CURRENT_TIMESTAMP,
+    foreign key(location_id) REFERENCES bin_location(id) on update cascade on delete cascade,
+    foreign key(item_id) REFERENCES item(id) on update cascade on delete cascade,
+    foreign key(uom_id) REFERENCES unit_of_measure(id) on update cascade on delete cascade,
+    upload_type varchar(200)
+)
